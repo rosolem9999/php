@@ -1,0 +1,27 @@
+<?php
+//criar um conexão para o MySQL
+$host='127.0.0.1';
+$bd='cadastro';
+$userbd='root';
+$senhabd='senac';
+
+//receber do form
+$nome=$_POST["nome"];
+$emaile=$_POST["email"];
+$ddd=$_POST["ddd"];
+$tel=$_POST["telefone"];
+$endereco=$_POST["endereço"];
+$cidade=$_POST["cidade"];
+$estado=$_POST["estado"];
+$pais=$_POST["pais"];
+$login=$_POST["login"];
+$senha=$_POST["senha"];
+$news=$_POST["news"];
+
+//conectando com o bd
+$conexao=mysql_connect($host,$bd,$userbd,$senhabd);
+if(!$conexao)
+  die("erro de conexao->".msql_error());
+  $banco=mysql_select_bd($bd,$conexao);
+  if($banco)
+    die("erro de conexão de banco->".mysql_error());
